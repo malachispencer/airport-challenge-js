@@ -1,8 +1,9 @@
 const { Plane } = require('./plane.js')
 
 class Airport {
-  constructor() {
+  constructor(capacity = 50) {
     this.planes = [];
+    this.capacity = capacity;
   }
 
   land(plane) {
