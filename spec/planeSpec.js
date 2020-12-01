@@ -13,4 +13,12 @@ describe('Plane', () => {
       expect(plane.docked).toEqual(true);
     });
   });
+
+  describe('#flying', () => {
+    it('changes docked from true to false', () => {
+      plane.landed();
+      plane.flying();
+      expect(plane.docked).toBe(false);
+    });
+  });
 });

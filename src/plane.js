@@ -6,6 +6,10 @@ class Plane {
   landed() {
     this.docked = true;
   }
+
+  flying() {
+    this.docked = false;
+  }
 }
 
 module.exports = { Plane };
