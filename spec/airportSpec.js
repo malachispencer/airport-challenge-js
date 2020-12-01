@@ -27,5 +27,10 @@ describe('Airport', () => {
       airport.takeOff();
       expect(airport.planes.length).toBe(0);
     });
+
+    it('returns the removed Plane', () => {
+      airport.land(plane);
+      expect(airport.takeOff()).toEqual(plane);
+    });
   });
 });
