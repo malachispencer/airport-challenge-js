@@ -7,6 +7,10 @@ class Airport {
   }
 
   land(plane) {
+    if (this.maxCapacity()) {
+      throw 'Cannot land, Airport at max capacity.';
+    }
+
     this.planes.push(plane);
     plane.landed();
   }
@@ -15,6 +19,10 @@ class Airport {
     let plane = this.planes.shift();
     plane.flying();
     return plane;
+  }
+
+  maxCapacity() {
+    return this.planes.length === this.capacity;
   }
 }
 

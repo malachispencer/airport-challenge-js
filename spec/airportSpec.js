@@ -30,6 +30,14 @@ describe('Airport', () => {
       airport.land(plane);
       expect(plane.landed).toHaveBeenCalled();
     });
+
+    it('throws an error if Airport is at max capacity', () => {
+      for (let i = 1; i <= 50; i++) {
+        airport.land(plane);
+      }
+
+      expect(function() { airport.land(plane) }).toThrow('Cannot land, Airport at max capacity.');
+    });
   });
 
   describe('#takeOff', () => {
