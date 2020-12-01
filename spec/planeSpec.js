@@ -12,6 +12,10 @@ describe('Plane', () => {
       plane.landed();
       expect(plane.docked).toEqual(true);
     });
+
+    it('throws an exception is not called from Airport class', () => {
+      expect(function() { plane.landed() }).toThrow('Only ATC Can Approve Landing.');
+    });
   });
 
   describe('#flying', () => {
