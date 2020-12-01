@@ -13,6 +13,11 @@ describe('Airport', () => {
     it('sets the Airport capacity to 50 by default', () => {
       expect(airport.capacity).toEqual(50);
     });
+
+    it('allows user to set their own capacity', () => {
+      smallerAirport = new Airport(25);
+      expect(smallerAirport.capacity).toEqual(25);
+    });
   });
 
   describe('#land', () => {
