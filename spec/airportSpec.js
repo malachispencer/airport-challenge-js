@@ -9,6 +9,12 @@ describe('Airport', () => {
     plane = jasmine.createSpyObj('plane', ['landed', 'flying']);
   });
 
+  describe('#constructor', () => {
+    it('sets the Airport capacity to 50 by default', () => {
+      expect(airport.capacity).toEqual(50);
+    });
+  });
+
   describe('#land', () => {
     it('adds a Plane to the planes array', () => {
       airport.land(plane);
