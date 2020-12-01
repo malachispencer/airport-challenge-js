@@ -12,6 +12,10 @@ class Plane {
   }
 
   flying() {
+    if (!this.atcRequest()) {
+      throw 'Only ATC can approve take off.'
+    }
+
     this.docked = false;
   }
 

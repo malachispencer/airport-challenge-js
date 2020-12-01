@@ -26,5 +26,12 @@ describe('Plane', () => {
       plane.flying();
       expect(plane.docked).toBe(false);
     });
+
+    it('throws an exception if not called from Airport class', () => {
+      spyOn(plane, 'atcRequest').and.returnValue(true);
+      plane.landed();
+      plane.atcRequest = jasmine.createSpy('atcRequest').and.returnValue(false);
+      expect(function() { plane.flying() }).toThrow('Only ATC can approve take off.');
+    });
   });
 });
