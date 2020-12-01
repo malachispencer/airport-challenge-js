@@ -22,16 +22,20 @@ describe('Airport', () => {
 
   describe('#land', () => {
     it('adds a Plane to the planes array', () => {
+      spyOn(airport, 'stormy').and.returnValue(false);
       airport.land(plane);
       expect(airport.planes.length).toEqual(1);
     });
 
     it('calls the landed function in the Plane class', () => {
+      spyOn(airport, 'stormy').and.returnValue(false);
       airport.land(plane);
       expect(plane.landed).toHaveBeenCalled();
     });
 
     it('throws an error if Airport is at max capacity', () => {
+      spyOn(airport, 'stormy').and.returnValue(false);
+
       for (let i = 1; i <= 50; i++) {
         airport.land(plane);
       }
@@ -40,7 +44,7 @@ describe('Airport', () => {
     });
 
     it('throws an error if the weather is stormy', () => {
-      spyOn('airport', 'stormy').and.returnValue(true);
+      spyOn(airport, 'stormy').and.returnValue(true);
       expect(function() { airport.land(plane) }).toThrow('Weather conditions unacceptable for landing.');
     });
   });

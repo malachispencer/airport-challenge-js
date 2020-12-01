@@ -12,6 +12,10 @@ class Airport {
       throw 'Cannot land, Airport at max capacity.';
     }
 
+    if (this.stormy()) {
+      throw 'Weather conditions unacceptable for landing.';
+    }
+
     this.planes.push(plane);
     plane.landed();
   }
@@ -32,6 +36,10 @@ class Airport {
 
   empty() {
     return !this.planes.length;
+  }
+
+  stormy(weatherClass = Weather) {
+    return weatherClass.current() === 'stormy';
   }
 }
 
