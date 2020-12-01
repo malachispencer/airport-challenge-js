@@ -20,4 +20,10 @@ Here we rebuild Makers week one's weekend challenge, Airport Challenge, in JavaS
 
 ### Running The Application
 
-* Run ```node src/airport.js``` from the project root.
+1. Ensure you are in the project root.
+
+2. Run ```node``` in the command line to open up the REPL.
+
+3. Enter ```const { Airport, Plane, Weather } = require('./src/airport.js');``` in the REPL to require all the classes.
+
+4. Create an Airport instances, Plane instances and have fun!
