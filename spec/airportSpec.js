@@ -38,6 +38,11 @@ describe('Airport', () => {
 
       expect(function() { airport.land(plane) }).toThrow('Cannot land, Airport at max capacity.');
     });
+
+    it('throws an error if the weather is stormy', () => {
+      spyOn('airport', 'stormy').and.returnValue(true);
+      expect(function() { airport.land(plane) }).toThrow('Weather conditions unacceptable for landing.');
+    });
   });
 
   describe('#takeOff', () => {

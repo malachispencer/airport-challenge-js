@@ -1,4 +1,5 @@
-const { Plane } = require('./plane.js')
+const { Plane } = require('./plane.js');
+const { Weather } = require('./weather.js');
 
 class Airport {
   constructor(capacity = 50) {
