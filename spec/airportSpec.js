@@ -20,4 +20,12 @@ describe('Airport', () => {
       expect(plane.landed).toHaveBeenCalled();
     });
   });
+
+  describe('#takeOff', () => {
+    it('removes a Plane from the plane array', () => {
+      airport.land(plane);
+      airport.take_off
+      expect(airport.planes.length).toBe(0);
+    });
+  });
 });
