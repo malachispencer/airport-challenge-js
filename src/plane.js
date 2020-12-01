@@ -4,6 +4,10 @@ class Plane {
   }
 
   landed() {
+    if (!this.atcRequest()) {
+      throw 'Only ATC can approve landing.';
+    }
+
     this.docked = true;
   }
 
@@ -11,7 +15,7 @@ class Plane {
     this.docked = false;
   }
 
-  atc_request() {
+  atcRequest() {
     let stackTraceArray = new Error().stack.split('\n');
 
     return stackTraceArray.some(line => {
