@@ -32,5 +32,11 @@ describe('Airport', () => {
       airport.land(plane);
       expect(airport.takeOff()).toEqual(plane);
     });
+
+    it('calls the #flying method in the Plane class', () => {
+      airport.land(plane);
+      airport.takeOff();
+      expect(plane.flying).toHaveBeenCalled();
+    });
   });
 });
