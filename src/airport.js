@@ -25,6 +25,10 @@ class Airport {
       throw 'Airport empty.'
     }
 
+    if (this.stormy()) {
+      throw 'Weather conditions unacceptable for take off.'
+    }
+
     let plane = this.planes.shift();
     plane.flying();
     return plane;

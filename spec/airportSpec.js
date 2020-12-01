@@ -15,7 +15,7 @@ describe('Airport', () => {
     });
 
     it('allows user to set their own capacity', () => {
-      smallerAirport = new Airport(25);
+      let smallerAirport = new Airport(25);
       expect(smallerAirport.capacity).toEqual(25);
     });
   });
@@ -69,6 +69,13 @@ describe('Airport', () => {
 
     it('throws an error if the planes array is empty', () => {
       expect(function() { airport.takeOff() }).toThrow('Airport empty.')
+    });
+
+    it('throws an error if the weather is stormy', () => {
+      spyOn(airport, 'stormy').and.returnValue(false);
+      airport.land(plane);
+      airport.stormy = jasmine.createSpy('stormy').and.returnValue(true);
+      expect(function() { airport.takeOff() }).toThrow('Weather conditions unacceptable for take off.');
     });
   });
 });
