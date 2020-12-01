@@ -24,7 +24,7 @@ describe('Airport', () => {
   describe('#takeOff', () => {
     it('removes a Plane from the plane array', () => {
       airport.land(plane);
-      airport.take_off
+      airport.takeOff();
       expect(airport.planes.length).toBe(0);
     });
   });

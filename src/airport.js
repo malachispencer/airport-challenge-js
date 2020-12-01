@@ -9,6 +9,11 @@ class Airport {
     this.planes.push(plane);
     plane.landed();
   }
+
+  takeOff() {
+    let plane = this.planes.shift();
+    return plane;
+  }
 }
 
 module.exports = { Airport };
