@@ -1,3 +1,5 @@
+const { Plane } = require('./plane.js')
+
 class Airport {
   constructor() {
     this.planes = [];
@@ -5,7 +7,8 @@ class Airport {
 
   land(plane) {
     this.planes.push(plane);
+    plane.landed();
   }
 }
 
-module.exports = { Airport }
+module.exports = { Airport };
