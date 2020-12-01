@@ -12,6 +12,7 @@ class Airport {
 
   takeOff() {
     let plane = this.planes.shift();
+    plane.flying();
     return plane;
   }
 }

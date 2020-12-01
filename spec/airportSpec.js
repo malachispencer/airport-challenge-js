@@ -6,7 +6,7 @@ describe('Airport', () => {
 
   beforeEach(() => {
     airport = new Airport();
-    plane = jasmine.createSpyObj('plane', ['landed']);
+    plane = jasmine.createSpyObj('plane', ['landed', 'flying']);
   });
 
   describe('#land', () => {
