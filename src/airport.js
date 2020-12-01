@@ -16,6 +16,10 @@ class Airport {
   }
 
   takeOff() {
+    if (this.empty()) {
+      throw 'Airport empty.'
+    }
+
     let plane = this.planes.shift();
     plane.flying();
     return plane;
@@ -23,6 +27,10 @@ class Airport {
 
   maxCapacity() {
     return this.planes.length === this.capacity;
+  }
+
+  empty() {
+    return !this.planes.length;
   }
 }
 

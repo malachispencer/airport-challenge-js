@@ -57,5 +57,9 @@ describe('Airport', () => {
       airport.takeOff();
       expect(plane.flying).toHaveBeenCalled();
     });
+
+    it('throws an error if the planes array is empty', () => {
+      expect(function() { airport.takeOff() }).toThrow('Airport empty.')
+    });
   });
 });
